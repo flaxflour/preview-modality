@@ -36,7 +36,6 @@ onMounted(async () => {
     await dl.init()
     dl.on('ready', async () => {
         const item = await dl.items.get()
-        console.log(`item fetched -`, {item})
         const previewModality = item.metadata.system.modalities.find(m => m.type === 'preview')
         if (previewModality) {
             if (previewModality.refType === 'url') {
