@@ -25,13 +25,7 @@ defineProps({
     msg: String
 })
 
-
-
-const count = ref(0)
-
-
 const refresh = () => window.location.reload()
-
 const isOpen = ref(false)
 const loading = ref(true)
 const typeOfContent = ref('image')
@@ -40,10 +34,7 @@ const initialHeight = null
 const type = ref('image/png')
 const url = ref('')
 
-const log = () => console.log('hii')
-
 onMounted(async () => {
-    window.me = loading
     await dl.init()
     dl.on('ready', async () => {
         const item = await dl.items.get()
@@ -52,16 +43,12 @@ onMounted(async () => {
         if (previewModality) {
             if (previewModality.refType === 'url') {
                 url.value = previewModality.ref
-                type.value = previewModality.mimetype
             } else {
                 const modalityItem = await dl.items.stream(previewModality.stream)
                 url.value = modalityItem
-                // type.value = modalityItem.metadata?.system?.mimetype
-                // const width = modalityItem.metadata.system.width
-                // const height = modalityItem.metadata.system.height
-                // await dl.app.updateSlotSettings({ width, height })
             }
-            typeOfContent.value = type.value.split('/')[0]
+            type.value = previewModality.mimetype ? previewModality.mimetype : type.value
+            typeOfContent.value = type.value
         }
         loading.value = false
     })

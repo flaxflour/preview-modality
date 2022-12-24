@@ -1,7 +1,7 @@
 <template>
     <div>
         <VideoComponent
-            v-if="typeOfContent === 'video' && videoHeight && videoWidth || typeOfContent === 'video' && width && height"
+            v-if="typeOfContent.includes('video') && videoHeight && videoWidth || typeOfContent.includes('video') && width && height"
             :set-is-open="setIsOpen"
             :is-black-theme="isBlackTheme"
             :url="url"
@@ -14,7 +14,7 @@
             :video-height="videoHeight"
         />
         <ImageComponent
-            v-if="typeOfContent === 'image'"
+            v-if="typeOfContent.includes('image')"
             :set-is-open="setIsOpen"
             :loading="loading"
             :url="url"
@@ -25,18 +25,21 @@
             :img-width="imgWidth"
             :img-height="imgHeight"
         />
+        <PDFComponent v-if="typeOfContent.includes('pdf')" :url="url" />
     </div>
 </template>
 
 <script>
 import VideoComponent from './VideoComponent.vue';
 import ImageComponent from './ImageComponent.vue';
+import PDFComponent from './PDFComponent.vue';
 
 export default {
     name: "FloatingWindow",
     components: {
         VideoComponent,
-        ImageComponent
+        ImageComponent,
+        PDFComponent
     },
     props: [
         "setIsOpen",
