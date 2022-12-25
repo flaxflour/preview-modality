@@ -1,6 +1,6 @@
 {
   "id": "2",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "creator": "adva.a@dataloop.ai",
   "name": "referenceViewer1",
   "displayName": "referenceViewer1",
@@ -12,7 +12,7 @@
   "source": {
     "type": "git",
     "repo": "https://github.com/dataloop-ai-apps/preview-modality.git",
-    "tag": "v1.0.15"
+    "tag": "v1.0.16"
   },
   "scope": "organization",
   "components": {
