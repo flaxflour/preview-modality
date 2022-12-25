@@ -17,6 +17,8 @@ test/
 .idea/
 node_modules/
 dist/
+panels/
+.DS_Store
 npm-debug.log
 yarn-error.log
 
