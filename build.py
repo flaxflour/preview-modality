@@ -3,7 +3,6 @@ import json
 import os
  
 
-panel_name = ''
 with open('./dataloop.json') as json_file:
     data = json.load(json_file)
     panel_name = data['components']['panels'][0]['name']
