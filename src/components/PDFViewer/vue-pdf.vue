@@ -295,9 +295,6 @@ export default defineComponent({
 <style>
 .vue-pdf__wrapper {
   position: relative;
-
-  &-text-layer {
-  }
   &-annotation-layer {
     position: absolute;
     .linkAnnotation {

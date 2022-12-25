@@ -13,14 +13,15 @@ import { PDFDocumentProxy } from "pdfjs-dist/types/src/display/api";
 export default defineComponent({
   name: "PDFComponent",
   components: { VuePdf },
+  props: ["url"],
   data() {
     return {
       page: 1,
     };
   },
-  setup() {
+  setup(props) {
     const pdfSrc = ref<VuePdfPropsType["src"]>(
-      "https://cdn.filestackcontent.com/wcrjf9qPTCKXV3hMXDwK"
+      props.url
     );
     const numOfPages = ref(0);
 
