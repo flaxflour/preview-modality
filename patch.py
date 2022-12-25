@@ -12,9 +12,9 @@ with open('./dataloop.json') as json_file:
 with open("./dataloop.json", "w") as jsonFile:
     json.dump(data, jsonFile, indent=2)
 
-cmd = ['git', 'commit', '-am' 'v{}'.format('.'.join(current_version))]
+cmd = ['git', 'commit', '-am', current_version]
 p = subprocess.Popen(cmd)
 p.communicate()
-cmd = ['git', 'tag', '-a', '.'.join(current_version), '-m', 'v{}'.format('.'.join(current_version))]
+cmd = ['git', 'tag', '-a', current_version, '-m', current_version]
 p = subprocess.Popen(cmd)
 p.communicate()
