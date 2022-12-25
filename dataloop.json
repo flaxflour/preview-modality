@@ -72,7 +72,7 @@
         "mainClass": "ServiceRunner",
         "initInputs": [],
         "version": {
-          "dtlpy": "1.71.7",
+          "dtlpy": "1.70.29",
           "verify": false
         },
         "functions": []
@@ -93,7 +93,7 @@
           "numReplicas": 1,
           "concurrency": 10,
           "pyPackages": {},
-          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/main:1.71.7.latest",
+          "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/main:1.70.29.latest",
           "singleAgent": false,
           "autoscaler": {
             "type": "rabbitmq",
